@@ -1,0 +1,69 @@
+Codebreaker
+
+Constants: 
+	Color choices - palette to be determined, halfway thinking pokemon pictures (because i’m a geek like that)
+	
+State variables
+Number of guesses-starts at 10
+Won;
+Lost;
+the random code
+Previous guesses:
+The hints section
+The guess block
+guess counter
+Previous guesses board
+Guess circle- 0-1-2-3
+
+
+Cached elements - 
+Previous guesses and their hints
+
+Event listeners:
+
+Color button - 
+fill the first available guess circle of the guess block - if all four filled, do nothing
+
+Submit button - 
+fills first available section of the board with your guess (the guess section has to be completed for the submit to accept the guess otherwise does nothing).
+Upon the board being filled it changes the elements of the box on the right (hints section) needs to return a green dot for each circle that is the right color in the right place, and a yellow dot for each color correct but in the wrong place. For that guess
+If the code is correct, an element will get turned on that will say “you win” and have a button that says play again.
+If the guess board is filled and the code hasn’t been guess, an element will get turned on that will say ‘Sorry, you didn’t get the code’ with a button that says play again.
+
+Delete button - 
+will clear the last filled circle on the guess block, if the guess block is empty, does nothing
+
+Play again button -
+ will run the init
+
+
+Functions
+init - 
+Clear the board
+Pick a random code to break(four colors long, 8 color options)
+Reset the guess counter 
+Reset the guess circles 
+
+color button {
+Fill first available code circle in guess area} this is determined by using a guess board counter, if the counter is greater than four nothing happens, if it is 0-3 it will replace the img src/ or color of the guess circle with that of the color/picture, increase the counter. Then render the screen
+
+Submit button {
+Upon the submit button being pressed, it will run the compare code function, change the elements of the previous guess to the guess board ( 
+
+Compare code function {
+This will compare the current code with the current guess
+Determine if the code is exactly the same as the secret code. If it isn’t it will determine how many are the correct color in the correct place, and how many are the correct color in the wrong space. Maybe putting them in an object, with keys set to their position, then running a sort function to reduce them to counted elements and comparing the two and return a number of yellow dots, then doing a more direct comparison using a for… in function. -minusing each yellow dot for each correct comparison and adding a green dot. If the code is exactly the same fun winning game function 
+
+Winning game function{
+This should turn on an element that creates a box in the middle of the screen that says “you win” and a restart button
+
+Delete button {
+Clear the element of the last filled guess board circle
+
+Lost the game{
+You lost the game… and then this game, when the guess counter goes up to 10 a function triggers that renders a box that says “You lost the game, and this game” with a restart button
+
+Play again {runs init
+
+Render(
+Update guess board, update previous guess section, update the hint sections, and turn on the win/lose element when needed
