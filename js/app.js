@@ -8,6 +8,9 @@ let lost;
 let previousGuess;
 let hint;
 let guessBlock;
+let colorclick;
+let submitclick;
+let deleteclick;
 
 const board = [
     null, null, null, null, [null,null,null,null],
@@ -38,20 +41,29 @@ const colorBtnEl = {
 const submitBtnEl = document.getElementById('submit');
 const deleteBtnEl = document.getElementById('delete');
 
+const guessBoardOne = document.getElementById('gueOne');
+const guessBoardTwo = document.getElementById('gueTwo');
+const guessBoardThree = document.getElementById('gueThree');
+const guessBoardFour = document.getElementById('gueFour');
 
 //set up event listeners for the buttons
 for (const color in colorBtnEl) {
     colorBtnEl[color].addEventListener('click', addColor)}
 
-submitBtnEl.addEventListener('click', submit())
-deleteBtnEl.addEventListener('click', del())
+submitBtnEl.addEventListener('click', submit)
+deleteBtnEl.addEventListener('click', del)
 
 init()
 
 
 //define functions
 function addColor(e){
+    if (guessBlock.length < 4){
+    guessBlock.push(e.target.id);
     console.log(e.target.id)
+    colorclick = true;
+    render()
+}
 }
 
 function submit() {
@@ -79,8 +91,10 @@ function init() {
     numberOfGuesses = 10
     won = null;
     lost = null;
-    guessBlock = [null, null, null, null];
-
+    guessBlock = [];
+    colorclick = false;
+    submitclick = false;
+    deleteclick = false;
 
     //pick a new secret code
     secretCode = getNewCode()
@@ -88,5 +102,15 @@ function init() {
 }
 
 function render(){
+    //change the guess 
+    if (colorclick === true){
+        guessBoardOne.style.background = guessBlock[0];
+        guessBoardTwo.style.background = guessBlock[1];
+        guessBoardThree.style.background = guessBlock[2];
+        guessBoardFour.style.background = guessBlock[3];
+        colorclick = false;
+    } else if (submitclick === true && guessBlock.length === 4){
+        
+    }
 
 }
