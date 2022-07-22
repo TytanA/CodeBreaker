@@ -8,10 +8,6 @@ let lost;
 let previousGuess;
 let hint;
 let guessBlock;
-let guessCircleOne;
-let guessCircleTwo;
-let guessCircleThree;
-let guesscircleFour;
 
 const board = [
     null, null, null, null, [null,null,null,null],
@@ -50,6 +46,10 @@ for (const color in colorBtnEl) {
 submitBtnEl.addEventListener('click', submit())
 deleteBtnEl.addEventListener('click', del())
 
+init()
+
+
+//define functions
 function addColor(e){
     console.log(e.target.id)
 }
@@ -60,4 +60,33 @@ function submit() {
 
 function del() {
     console.log('delete')
+}
+
+function getNewCode(){
+    let a = colorChoices[Math.floor(Math.random() * colorChoices.length)];
+    let b = colorChoices[Math.floor(Math.random() * colorChoices.length)];
+    let c = colorChoices[Math.floor(Math.random() * colorChoices.length)];
+    let d = colorChoices[Math.floor(Math.random() * colorChoices.length)];
+    return [a, b, c, d]
+}
+
+
+function init() {
+    
+    //reset the guess board
+    board.forEach(ele => (ele = null))
+    //reset state variables
+    numberOfGuesses = 10
+    won = null;
+    lost = null;
+    guessBlock = [null, null, null, null];
+
+
+    //pick a new secret code
+    secretCode = getNewCode()
+    render()
+}
+
+function render(){
+
 }

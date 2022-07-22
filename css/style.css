@@ -66,9 +66,8 @@
     border-radius: 40px;
   }
   .otherButton {
-    height: 80px;
+    height: 30px;
     width: 80px;
-    margin: 0px 0px 0px 15px;
   }
   row {
     display: block;
