@@ -6,6 +6,7 @@
   body {
     height: 100vh;
     margin: 0;
+    text-align: center;
     font-family: Helvetica;
     display: grid;
     grid-template-columns: 1fr;
@@ -14,6 +15,13 @@
       "hdr"
       "content"
       "side";
+  }
+
+  h1 {
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
   }
 
   table {
