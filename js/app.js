@@ -11,6 +11,7 @@ let guessBlock;
 let colorclick;
 let submitclick;
 let deleteclick;
+let boardInd;
 
 const board = [
     null, null, null, null, [null,null,null,null],
@@ -68,8 +69,11 @@ function addColor(e){
 
 function submit() {
     if (guessBlock.length === 4) {
-        
-    }
+        submitclick = true;
+        CompareCodes()
+
+        render()
+    }   
     console.log('submit')
 }
 
@@ -85,6 +89,23 @@ function getNewCode(){
     return [a, b, c, d]
 }
 
+function clearGuessBlock(){
+    guessBoardOne.style.background = '';
+    guessBoardTwo.style.background = '';
+    guessBoardThree.style.background = '';
+    guessBoardFour.style.background = '';
+}
+
+function compareCodes(){
+    if (guessBlock === secretCode){
+        win()
+    }
+
+}
+
+function win(){
+
+}
 
 function init() {
     
@@ -98,11 +119,14 @@ function init() {
     colorclick = false;
     submitclick = false;
     deleteclick = false;
+    boardInd = 0
 
     //pick a new secret code
     secretCode = getNewCode()
     render()
 }
+
+
 
 function render(){
     //change the guess 
@@ -112,8 +136,20 @@ function render(){
         guessBoardThree.style.background = guessBlock[2];
         guessBoardFour.style.background = guessBlock[3];
         colorclick = false;
-    } else if (submitclick === true){
-        
+    } 
+    if (submitclick === true){
+        document.getElementById(boardInd).style.background = guessBlock[0];
+        boardInd++;
+        document.getElementById(boardInd).style.background = guessBlock[1];
+        boardInd++;
+        document.getElementById(boardInd).style.background = guessBlock[2];
+        boardInd++;
+        document.getElementById(boardInd).style.background = guessBlock[3];
+        boardInd++;
+        guessBlock = [];
+        clearGuessBlock();
+        submitclick = false;
     }
+
 
 }
