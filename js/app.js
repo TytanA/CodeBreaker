@@ -67,6 +67,9 @@ function addColor(e){
 }
 
 function submit() {
+    if (guessBlock.length === 4) {
+        
+    }
     console.log('submit')
 }
 
@@ -109,7 +112,7 @@ function render(){
         guessBoardThree.style.background = guessBlock[2];
         guessBoardFour.style.background = guessBlock[3];
         colorclick = false;
-    } else if (submitclick === true && guessBlock.length === 4){
+    } else if (submitclick === true){
         
     }
 
