@@ -36,22 +36,19 @@
 
   td {
     height: 80px;
-    width: 100px;
-    background-color: green;
+    width: 80px;
+    background-color: black;
     text-align: center;
     margin: auto;
+    border-radius: 40px;
   }
-  .board {
-    background-color: black;
-    height: 80px;
-    width: 80px;
-    border-radius: 50px;
-    margin: auto;  
-  }
+
   .hint {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%
+    grid-template-rows: 50% 50%;
+    background-color: silver;
+    border-radius: 0px;
 
   }
   p {
@@ -78,4 +75,29 @@
     margin-left: auto;
     margin-right: auto;
     width: 500px;
+  }
+
+  #green {
+    background-color: green;
+  }
+  #blue {
+    background-color: blue;
+  }
+    #red {
+    background-color: red;
+  }
+  #yellow {
+    background-color: yellow;
+  }
+  #grey {
+    background-color: grey;
+  }
+  #white {
+    background-color: white;
+  }
+  #purple {
+    background-color: purple;
+  }
+  #orange {
+    background-color: orange;
   }
