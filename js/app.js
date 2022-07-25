@@ -76,7 +76,7 @@ init()
 function addColor(e){
     if (guessBlock.length < 4){
     guessBlock.push(e.target.id);
-    console.log(e.target.id)
+    // console.log(e.target.id)
     colorclick = true;
     render()
 }
@@ -97,7 +97,10 @@ function submit() {
 
 //this function should remove the last color off of the guess board
 function del() {
-    console.log('delete')
+    console.log('delete');
+    guessBlock.pop();
+    deleteclick = true;
+    render();
 }
 
 //function for getting a new secret code, used in the init
@@ -232,6 +235,16 @@ function render(){
         hint = [];
         submitclick = false;
     }
-
+    if (deleteclick === true) {
+        if (guessBlock.length + 1 === 1){
+        guessBoardOne.style.background = 'black';
+        } else if (guessBlock.length + 1 === 2) {
+        guessBoardTwo.style.background = 'black';
+        } else if (guessBlock.length + 1 === 3) {
+        guessBoardThree.style.background = 'black';
+        } else if (guessBlock.length + 1 === 4)
+        guessBoardFour.style.background = 'black';
+        deleteclick = false;
+    }
 
 }
