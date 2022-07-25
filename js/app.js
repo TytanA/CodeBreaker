@@ -16,6 +16,7 @@ let hintInd; //this will track the hints indexs to give hints starts at 100
 let loopSecret; //needed a copy of the secret code to loop through in the compare secrets function
 let matchPlaceAndColor; //a variable to track which colors go into the current hint array
 let matchColor; //a variable to track which colors go into the current hint array
+let initRun;
 
 //this is the board, but uh I don't think i need this
 const board = [
@@ -49,11 +50,14 @@ const colorBtnEl = {
 
 const submitBtnEl = document.getElementById('submit'); //submit button
 const deleteBtnEl = document.getElementById('delete'); //delete button
+const playAgainBtnEl = document.getElementById('playAgain'); //play again button on the popup
 
 const guessBoardOne = document.getElementById('gueOne'); //maybe i should make a object for these like the color button but the elements for the guess board
 const guessBoardTwo = document.getElementById('gueTwo');
 const guessBoardThree = document.getElementById('gueThree');
 const guessBoardFour = document.getElementById('gueFour');
+const popUp = document.querySelector('#popup')
+const popupText = document.querySelector('.popupText')
 
 //set up event listeners for the buttons
 
@@ -63,6 +67,7 @@ for (const color in colorBtnEl) {
 
 submitBtnEl.addEventListener('click', submit) //clicking the submit button
 deleteBtnEl.addEventListener('click', del)  //clicking the delete button
+playAgainBtnEl.addEventListener('click', playAgain)
 
 //will need one for a start over button down the line
 
@@ -79,7 +84,7 @@ function addColor(e){
     // console.log(e.target.id)
     colorclick = true;
     render()
-}
+    }
 }
 
 //function that will fun when the submit button is pressed, should compare the codes, update the hint array, and then render
@@ -91,13 +96,25 @@ function submit() {
         hintArray();
         numberOfGuesses--
         loopSecret = secretCode.slice(0)
+        console.log(guessBlock)
+        if (numberOfGuesses === 0){
+            lost = true;
+        } else if (guessBlock === secretCode){
+            won = true;
+            console.log(won)
+        }
+    }
+    render()
+    if (lost === true) {
         render()
-    }   
-}
+    } else if (won === true) {
+        render
+    }
+    
+}   
 
 //this function should remove the last color off of the guess board
 function del() {
-    console.log('delete');
     guessBlock.pop();
     deleteclick = true;
     render();
@@ -154,6 +171,9 @@ function compareCodes(){
           matchColor-=1;
         }
     }
+    if (matchPlaceAndColor === 4){
+        won = true;
+    }
 }
 
 function hintArray(){
@@ -161,7 +181,6 @@ function hintArray(){
         if (matchPlaceAndColor > 0) {
             hint.push('green');
             matchPlaceAndColor-= 1;
-            console.log(matchPlaceAndColor, 'this is matchPlaceAndColor')
         } else if (matchColor > 0) {
             hint.push('yellow');
             matchColor-= 1
@@ -171,18 +190,22 @@ function hintArray(){
     }
 }
 
-function win(){
-    console.log('you win')
+
+function closePopUp(){
+    popUp.classList.add('popupClose')
+}
+
+function playAgain(){
+    init()
 }
 
 function init() {
-    
+    initRun = true;
     //reset the guess board
-    board.forEach(ele => (ele = null))
     //reset state variables
     numberOfGuesses = 10
-    won = null;
-    lost = null;
+    won = false;
+    lost = false;
     guessBlock = [];
     colorclick = false;
     submitclick = false;
@@ -204,7 +227,16 @@ function init() {
 
 
 function render(){
-    //change the guess 
+    if (initRun === true){
+        for(let i=0; i < 40; i++){
+            document.getElementById(i).style.background = 'black';
+            document.getElementById(i + 100).style.background = 'black';
+
+        }
+        popUp.className = 'popupClose';
+        initRun = false;
+
+    }
     if (colorclick === true){
         guessBoardOne.style.background = guessBlock[0];
         guessBoardTwo.style.background = guessBlock[1];
@@ -223,7 +255,6 @@ function render(){
         boardInd++;
         guessBlock = [];
         clearGuessBlock();
-        console.log(hint)
         document.getElementById(hintInd).style.background = hint[0];
         hintInd++;
         document.getElementById(hintInd).style.background = hint[1];
@@ -245,6 +276,14 @@ function render(){
         } else if (guessBlock.length + 1 === 4)
         guessBoardFour.style.background = 'black';
         deleteclick = false;
+    }
+    if (won === true){
+        popUp.className = 'popupOpen';
+        popupText.innerText = 'You Won. Great job, betcha can\'t do it again'
+    }
+    if (lost === true){
+        popUp.className = 'popupOpen';
+        popupText.innerText = 'Wow, I see. Umm, you should try again'
     }
 
 }
