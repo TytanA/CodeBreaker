@@ -37,10 +37,12 @@
   td {
     height: 80px;
     width: 80px;
-    background-color: black;
+    background: black;
+    border-color: black;
     text-align: center;
     margin: auto;
     border-radius: 40px;
+    border-style: solid;
   }
 
   .hint {

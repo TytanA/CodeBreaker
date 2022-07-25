@@ -12,6 +12,10 @@ let colorclick;
 let submitclick;
 let deleteclick;
 let boardInd;
+let hintInd;
+let loopSecret;
+let matchPlaceAndColor;
+let matchColor;
 
 const board = [
     null, null, null, null, [null,null,null,null],
@@ -70,7 +74,7 @@ function addColor(e){
 function submit() {
     if (guessBlock.length === 4) {
         submitclick = true;
-        CompareCodes()
+        CompareCodes();
 
         render()
     }   
@@ -97,14 +101,51 @@ function clearGuessBlock(){
 }
 
 function compareCodes(){
-    if (guessBlock === secretCode){
-        win()
-    }
+    for (let i = 0; i < guessBlock.length; i++) {
 
+        //the thought process here is counting the number of matching colors and then seeing how many of those matching colors also
+        //match places, then generating a hint array that can be used in the render function 
+        if (guessBlock[i] === loopSecret[0]) {
+          matchColor++;
+          loopSecret[0] = 'matched'
+        }
+        else if (guessBlock[i] === loopSecret[1] && i !== 1) {
+          matchColor++;
+          loopSecret[1] = 'matched'
+        }
+        else if (guessBlock[i] === loopSecret[2] && i !== 2) {
+          matchColor++;
+          loopSecret[2] = 'matched'
+        }
+        else if (guessBlock[i] === loopSecret[3] && i !== 3) {
+          matchColor++;
+          loopSecret[3] = 'matched'
+        }
+      
+    for (let i = 0; i < guessBlock.length; i++) {
+        if (secretCode[i] === guessBlock[i]) {
+          matchPlaceAndColor++
+          matchColor--
+        }
+      }
+    }
+}
+
+function hintArray(){
+    for (let i = 0; i < 4; i++) {
+        if (matchPlaceAndColor > 0) {
+            hint.push('green')
+            matchPlaceAndColor--
+        } else if (matchColor > 0) {
+            hint.push('yellow')
+        } else {
+            hint.push('black')
+        }
+    }
 }
 
 function win(){
-
+    console.log('you win')
 }
 
 function init() {
@@ -119,10 +160,17 @@ function init() {
     colorclick = false;
     submitclick = false;
     deleteclick = false;
-    boardInd = 0
+    boardInd = 0;
+    hintInd = 100;
+    hint = [];
 
     //pick a new secret code
-    secretCode = getNewCode()
+    secretCode = getNewCode();
+
+    loopSecret = secretCode.slice(0);
+    let matchPlaceAndColor = 0;
+    let matchColor = 0;
+
     render()
 }
 
@@ -148,6 +196,15 @@ function render(){
         boardInd++;
         guessBlock = [];
         clearGuessBlock();
+        document.getElementById(boardInd).style.background = hint[0];
+        hintInd++;
+        document.getElementById(boardInd).style.background = hint[1];
+        hintInd++;
+        document.getElementById(boardInd).style.background = hint[2];
+        hintInd++;
+        document.getElementById(boardInd).style.background = hint[3];
+        hintInd++;
+
         submitclick = false;
     }
 
