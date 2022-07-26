@@ -284,11 +284,11 @@ function render(){
     }
     if (won === true){
         popUp.className = 'popupOpen';
-        popupText.innerText = 'You Won. Great job, betcha can\'t do it again'
+        popupText.innerText = 'You Successfully Defeated the Dungeon! Are you ready for the next one?'
     }
     if (lost === true){
         popUp.className = 'popupOpen';
-        popupText.innerText = 'Wow, I see. Umm, you should try again'
+        popupText.innerText = 'You enter the dungeon ill prepared, a monster jumps out and catches you by surprise. You are defeated!'
     }
 
 }
