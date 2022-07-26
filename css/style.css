@@ -57,11 +57,10 @@
     border-radius: 0px;
     background-image: url('../imgs/Shield1.png');
     background-size: cover;
-    background-color: black;
+    background-color: rgba(255, 255, 255, .1);
 
   }
   p {
-    background: blueviolet;
     height: 10px;
     width: 10px;
     border-radius: 5px;
@@ -88,43 +87,43 @@
   .green {
     background-image: url('../imgs/Coin.png');
     background-size: cover;
-    background-color: black;
+    background-color: rgba(255, 255, 255, .1);
   }
  
   .blue {
     background-image: url('../imgs/Harold4.png');
     background-size: cover;
-    background-color: black;
+    background-color: rgba(255, 255, 255, .1);
   }
     .red {
       background-image: url('../imgs/Lucius4.png');
       background-size: cover;
-      background-color: black;
+      background-color: rgba(255, 255, 255, .1);
   }
   .yellow {
     background-image: url('../imgs/orb1.png');
     background-size: cover;
-    background-color: black;
+    background-color: rgba(255, 255, 255, .1);
   }
   .grey {
     background-image: url('../imgs/Potion1.png');
     background-size: cover;
-    background-color: black;
+    background-color: rgba(255, 255, 255, .1);
   }
   .white {
     background-image: url('../imgs/Ring1.png');
     background-size: cover;
-    background-color: black;
+    background-color: rgba(255, 255, 255, .1);
   }
   .purple {
     background-image: url('../imgs/Key1.png');
     background-size: cover;
-    background-color: black;
+    background-color: rgba(255, 255, 255, .1);
   }
   .orange {
     background-image: url('../imgs/Therese3.png');
     background-size: cover;
-    background-color: black;
+    background-color: rgba(255, 255, 255, .1);
   }
 
   #popup {
