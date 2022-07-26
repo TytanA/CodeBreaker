@@ -1,6 +1,11 @@
 //games constant variable
 const colorChoices = ['green', 'blue', 'red', 'yellow', 'grey', 'white', 'purple', 'orange']
+const Choices = ['ring', 'sword', 'bow', 'orb', 'potion', 'ring', 'shield', 'axe']
+const Choices2 = {
+    ring: {
 
+    }
+}
 //state variables
 let numberOfGuesses //number of guess allowed
 let won; //may not be needed, we will see
@@ -131,10 +136,10 @@ function getNewCode(){
 
 //function for clearing the guessboard, used in render
 function clearGuessBlock(){
-    guessBoardOne.style.background = '';
-    guessBoardTwo.style.background = '';
-    guessBoardThree.style.background = '';
-    guessBoardFour.style.background = '';
+    guessBoardOne.className = '';
+    guessBoardTwo.className = '';
+    guessBoardThree.className = '';
+    guessBoardFour.className = '';
 }
 
 
@@ -229,7 +234,7 @@ function init() {
 function render(){
     if (initRun === true){
         for(let i=0; i < 40; i++){
-            document.getElementById(i).style.background = 'black';
+            document.getElementById(i).className = '';
             document.getElementById(i + 100).style.background = 'black';
 
         }
@@ -238,20 +243,20 @@ function render(){
 
     }
     if (colorclick === true){
-        guessBoardOne.style.background = guessBlock[0];
-        guessBoardTwo.style.background = guessBlock[1];
-        guessBoardThree.style.background = guessBlock[2];
-        guessBoardFour.style.background = guessBlock[3];
+        guessBoardOne.classList.add(guessBlock[0]);
+        guessBoardTwo.classList.add(guessBlock[1]);
+        guessBoardThree.classList.add(guessBlock[2]);
+        guessBoardFour.classList.add(guessBlock[3]);
         colorclick = false;
     } 
     if (submitclick === true){ 
-        document.getElementById(boardInd).style.background = guessBlock[0];
+        document.getElementById(boardInd).classList.add(guessBlock[0]);
         boardInd++;
-        document.getElementById(boardInd).style.background = guessBlock[1];
+        document.getElementById(boardInd).classList.add(guessBlock[1]);
         boardInd++;
-        document.getElementById(boardInd).style.background = guessBlock[2];
+        document.getElementById(boardInd).classList.add(guessBlock[2]);
         boardInd++;
-        document.getElementById(boardInd).style.background = guessBlock[3];
+        document.getElementById(boardInd).classList.add(guessBlock[3]);
         boardInd++;
         guessBlock = [];
         clearGuessBlock();
@@ -268,13 +273,13 @@ function render(){
     }
     if (deleteclick === true) {
         if (guessBlock.length + 1 === 1){
-        guessBoardOne.style.background = 'black';
+        guessBoardOne.className = '';
         } else if (guessBlock.length + 1 === 2) {
-        guessBoardTwo.style.background = 'black';
+        guessBoardTwo.className = '';
         } else if (guessBlock.length + 1 === 3) {
-        guessBoardThree.style.background = 'black';
+        guessBoardThree.className = '';
         } else if (guessBlock.length + 1 === 4)
-        guessBoardFour.style.background = 'black';
+        guessBoardFour.className = '';
         deleteclick = false;
     }
     if (won === true){

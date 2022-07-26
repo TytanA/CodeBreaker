@@ -38,7 +38,7 @@
   .guessTable{
     background-image: url('../imgs/guessBoardbackground.png');
     background-size: cover;
-    width: 170px;
+    width: 200px;
     height: 50px;
     padding: 0 10px 0 10px;
   }
@@ -46,20 +46,18 @@
   td {
     height: 40px;
     width: 40px;
-    background: black;
-    border-color: black;
     text-align: center;
     margin: 0px 0px 0px 20px;
-    border-radius: 20px;
-    border-style: solid;
   }
 
   .hint {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
-    background-color: silver;
     border-radius: 0px;
+    background-image: url('../imgs/Shield1.png');
+    background-size: cover;
+    background-color: black;
 
   }
   p {
@@ -87,43 +85,43 @@
     width: 500px;
   }
 
-  #green {
+  .green {
     background-image: url('../imgs/Coin.png');
     background-size: cover;
     background-color: black;
   }
  
-  #blue {
+  .blue {
     background-image: url('../imgs/Harold4.png');
     background-size: cover;
     background-color: black;
   }
-    #red {
+    .red {
       background-image: url('../imgs/Lucius4.png');
       background-size: cover;
       background-color: black;
   }
-  #yellow {
+  .yellow {
     background-image: url('../imgs/orb1.png');
     background-size: cover;
     background-color: black;
   }
-  #grey {
+  .grey {
     background-image: url('../imgs/Potion1.png');
     background-size: cover;
     background-color: black;
   }
-  #white {
+  .white {
     background-image: url('../imgs/Ring1.png');
     background-size: cover;
     background-color: black;
   }
-  #purple {
-    background-image: url('../imgs/Shield1.png');
+  .purple {
+    background-image: url('../imgs/Key1.png');
     background-size: cover;
     background-color: black;
   }
-  #orange {
+  .orange {
     background-image: url('../imgs/Therese3.png');
     background-size: cover;
     background-color: black;
