@@ -9,6 +9,8 @@
     text-align: center;
     font-family: Helvetica;
     display: grid;
+    background-image: url('../imgs/website\ background.png');
+    color: white;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 450px 100px;
     grid-template-areas: 
@@ -67,7 +69,7 @@
   .colorButton {
     height: 40px;
     width: 40px;
-    border-radius: 40px;
+    border-style: none;
   }
   .otherButton {
     height: 30px;
@@ -81,28 +83,37 @@
   }
 
   #green {
-    background-color: green;
+    background-image: url('../imgs/Coin.png');
+    background-size: cover;
   }
+ 
   #blue {
-    background-color: blue;
+    background-image: url('/imgs/Harold4.png');
+    background-size: cover;
   }
     #red {
-    background-color: red;
+      background-image: url('/imgs/Lucius4.png');
+      background-size: cover;
   }
   #yellow {
-    background-color: yellow;
+    background-image: url('/imgs/orb1.png');
+    background-size: cover;
   }
   #grey {
-    background-color: grey;
+    background-image: url('/imgs/Potion1.png');
+    background-size: cover;
   }
   #white {
-    background-color: white;
+    background-image: url('/imgs/Ring1.png');
+    background-size: cover;
   }
   #purple {
-    background-color: purple;
+    background-image: url('/imgs/Shield1.png');
+    background-size: cover;
   }
   #orange {
-    background-color: orange;
+    background-image: url('/imgs/Therese3.png');
+    background-size: cover;
   }
 
   #popup {

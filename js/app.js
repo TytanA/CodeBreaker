@@ -244,7 +244,7 @@ function render(){
         guessBoardFour.style.background = guessBlock[3];
         colorclick = false;
     } 
-    if (submitclick === true){
+    if (submitclick === true){ 
         document.getElementById(boardInd).style.background = guessBlock[0];
         boardInd++;
         document.getElementById(boardInd).style.background = guessBlock[1];
