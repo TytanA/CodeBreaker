@@ -235,7 +235,7 @@ function render(){
     if (initRun === true){
         for(let i=0; i < 40; i++){
             document.getElementById(i).className = '';
-            document.getElementById(i + 100).style.background = 'black';
+            document.getElementById(i + 100).style.background = '';
 
         }
         popUp.className = 'popupClose';
