@@ -35,8 +35,8 @@
   table {
     background-image: url('../imgs/boardBackground\ 2.png');
     background-size: cover;
-    width: 250px;
-    height: 500px;
+    width: auto;
+    height: auto;
     margin: auto;
     padding: 3px 3px 3px 5px;
     border-radius: 6px;
@@ -45,8 +45,8 @@
   .guessTable{
     background-image: url('../imgs/guessBoardbackground.png');
     background-size: cover;
-    width: 200px;
-    height: 50px;
+    width: auto;
+    height: auto;
     padding: 0 10px 0 10px;
   }
 
@@ -57,6 +57,17 @@
     margin: 0px 0px 0px 20px;
   }
 
+.board {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  margin: 0px 0px 0px 20px;
+}
+
+  #gueOne{
+    width: 38px;
+    height: 36px;
+  }
   .hint {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -91,43 +102,43 @@
     width: 500px;
   }
 
-  .green {
+  .coin {
     background-image: url('../imgs/Coin.png');
     background-size: cover;
     background-color: rgba(255, 255, 255, .1);
   }
  
-  .blue {
+  .sword {
     background-image: url('../imgs/Harold4.png');
     background-size: cover;
     background-color: rgba(255, 255, 255, .1);
   }
-    .red {
+    .bow {
       background-image: url('../imgs/Lucius4.png');
       background-size: cover;
       background-color: rgba(255, 255, 255, .1);
   }
-  .yellow {
+  .orb {
     background-image: url('../imgs/orb1.png');
     background-size: cover;
     background-color: rgba(255, 255, 255, .1);
   }
-  .grey {
+  .potion {
     background-image: url('../imgs/Potion1.png');
     background-size: cover;
     background-color: rgba(255, 255, 255, .1);
   }
-  .white {
+  .ring {
     background-image: url('../imgs/Ring1.png');
     background-size: cover;
     background-color: rgba(255, 255, 255, .1);
   }
-  .purple {
+  .key {
     background-image: url('../imgs/Key1.png');
     background-size: cover;
     background-color: rgba(255, 255, 255, .1);
   }
-  .orange {
+  .axe {
     background-image: url('../imgs/Therese3.png');
     background-size: cover;
     background-color: rgba(255, 255, 255, .1);

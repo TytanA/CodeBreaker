@@ -1,11 +1,6 @@
 //games constant variable
-const colorChoices = ['green', 'blue', 'red', 'yellow', 'grey', 'white', 'purple', 'orange']
-const Choices = ['ring', 'sword', 'bow', 'orb', 'potion', 'ring', 'shield', 'axe']
-const Choices2 = {
-    ring: {
+const colorChoices = ['ring', 'sword', 'bow', 'orb', 'potion', 'ring', 'shield', 'axe']
 
-    }
-}
 //state variables
 let numberOfGuesses //number of guess allowed
 let won; //may not be needed, we will see
@@ -21,36 +16,23 @@ let hintInd; //this will track the hints indexs to give hints starts at 100
 let loopSecret; //needed a copy of the secret code to loop through in the compare secrets function
 let matchPlaceAndColor; //a variable to track which colors go into the current hint array
 let matchColor; //a variable to track which colors go into the current hint array
-let initRun;
+let initRun; //a variable to track the init function running in the render
 
-//this is the board, but uh I don't think i need this
-const board = [
-    null, null, null, null, [null,null,null,null],
-    null, null, null, null, [null,null,null,null],
-    null, null, null, null, [null,null,null,null],
-    null, null, null, null, [null,null,null,null],
-    null, null, null, null, [null,null,null,null],
-    null, null, null, null, [null,null,null,null],
-    null, null, null, null, [null,null,null,null],
-    null, null, null, null, [null,null,null,null],
-    null, null, null, null, [null,null,null,null],
-    null, null, null, null, [null,null,null,null],
-]
 
 let secretCode = ['', '', '', '',] //the vital secret code
 
 //cashed elements
 
-//for each of the color buttons
+//for each of the choice buttons
 const colorBtnEl = {
-    green: document.querySelector('#green'),
-    blue: document.querySelector('#blue'),
-    red: document.querySelector('#red'),
-    yellow: document.querySelector('#yellow'),
-    grey: document.querySelector('#grey'),
-    white: document.querySelector('#white'),
-    purple: document.querySelector('#purple'),
-    orange:document.querySelector('#orange')
+    coin: document.querySelector('#coin'),
+    sword: document.querySelector('#sword'),
+    bow: document.querySelector('#bow'),
+    orb: document.querySelector('#orb'),
+    potion: document.querySelector('#potion'),
+    ring: document.querySelector('#ring'),
+    key: document.querySelector('#key'),
+    axe: document.querySelector('#axe')
 }
 
 const submitBtnEl = document.getElementById('submit'); //submit button
@@ -195,10 +177,11 @@ function hintArray(){
     }
 }
 
-
+//function to close the popup, used in the render
 function closePopUp(){
     popUp.classList.add('popupClose')
 }
+
 
 function playAgain(){
     init()
@@ -206,7 +189,6 @@ function playAgain(){
 
 function init() {
     initRun = true;
-    //reset the guess board
     //reset state variables
     numberOfGuesses = 10
     won = false;
@@ -234,7 +216,7 @@ function init() {
 function render(){
     if (initRun === true){
         for(let i=0; i < 40; i++){
-            document.getElementById(i).className = '';
+            document.getElementById(i).className = 'board';
             document.getElementById(i + 100).style.background = '';
 
         }
