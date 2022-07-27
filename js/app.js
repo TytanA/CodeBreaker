@@ -1,5 +1,5 @@
 //games constant variable
-const colorChoices = ['ring', 'sword', 'bow', 'orb', 'potion', 'ring', 'shield', 'axe']
+const colorChoices = ['ring', 'sword', 'bow', 'orb', 'potion', 'ring', 'key', 'axe']
 
 //state variables
 let numberOfGuesses //number of guess allowed
@@ -79,17 +79,11 @@ function addColor(e){
 function submit() {
     if (guessBlock.length === 4) {
         submitclick = true;
+        numberOfGuesses--
         compareCodes();
         hintArray();
-        numberOfGuesses--
         loopSecret = secretCode.slice(0)
         console.log(guessBlock)
-        if (numberOfGuesses === 0){
-            lost = true;
-        } else if (guessBlock === secretCode){
-            won = true;
-            console.log(won)
-        }
     }
     render()
     if (lost === true) {
@@ -160,6 +154,8 @@ function compareCodes(){
     }
     if (matchPlaceAndColor === 4){
         won = true;
+    } else if (numberOfGuesses === 0){
+        lost = true;
     }
 }
 
