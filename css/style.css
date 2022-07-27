@@ -10,7 +10,7 @@
     text-align: center;
     font-family: 'Macondo Swash Caps', cursive;
     display: grid;
-    background-image: url('../imgs/website\ background.png');
+    background-image: url('../imgs/websiteBackground3.png');
     grid-template-columns: 1fr;
     grid-template-rows: 50px 0px 500px 100px;
     grid-template-areas: 
@@ -178,6 +178,7 @@ gameDes {
   visibility: visible;
   transform: translate(0, 0) scale(1);
   grid-column: 1;
+  max-width: 600px;
 }
 content {
   grid-column: 2
