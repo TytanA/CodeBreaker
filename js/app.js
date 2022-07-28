@@ -1,5 +1,8 @@
 //games constant variable
-const colorChoices = ['ring', 'sword', 'bow', 'orb', 'potion', 'ring', 'key', 'axe']
+const colorChoices = ['ring', 'sword', 'bow', 'orb', 'potion', 'ring', 'key', 'axe'];
+const backgroundMusic = new Audio('../audio/dungeon_theme_1.wav');
+const wonSound = new Audio('../audio/Fanfare_3.wav');
+const lostSound = new Audio('../audio/Game_Over_1.wav')
 
 //state variables
 let numberOfGuesses //number of guess allowed
@@ -45,7 +48,7 @@ const guessBoardThree = document.getElementById('gueThree');
 const guessBoardFour = document.getElementById('gueFour');
 const popUp = document.querySelector('#popup')
 const popupText = document.querySelector('.popupText')
-
+const sound = document.getElementById('sound')
 //set up event listeners for the buttons
 
 //cliking the color buttons
@@ -60,6 +63,9 @@ playAgainBtnEl.addEventListener('click', playAgain)
 
 
 init()
+
+//setting volume for the background music
+sound.volume =.3
 
 
 //define functions

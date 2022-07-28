@@ -12,7 +12,7 @@
     display: grid;
     background-image: url('../imgs/websiteBackground3.png');
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 0px 500px 100px;
+    grid-template-rows: 50px 0px 450px 100px;
     grid-template-areas: 
       "header"
       "gameDes"
@@ -22,6 +22,7 @@
   header {
     display: flex;
   }
+
   gameDes {
     visibility: hidden;
     transform: translate(-50%, -50%) scale(0.1);
