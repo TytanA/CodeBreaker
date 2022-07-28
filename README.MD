@@ -26,6 +26,10 @@ You have 10 tries to guess the secret code, it you do not then you lose.
 
 # Planned Improvements
 
+* Add background music, win audio, and lost audio.
+* Animate the sprites 
+* Get assets for a pixel rpg hero to add to the web page in the website
+*  
 
 # Original Wireframe
 
