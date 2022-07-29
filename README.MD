@@ -30,10 +30,12 @@ You have 10 tries to guess the secret code, it you do not then you lose.
 
 # Planned Improvements
 
+* Update the submit and delete buttons so that they fit the theme better and fit better on the page.
 * Add background music, win audio, and lost audio.
-* Animate the sprites 
+* Animate the sprites.
 * Get assets for a pixel rpg hero to add to the web page in the website
 * Miltiple difficulity modes
+* Doing a drag and drop for the code instead of click to fill
 
 # Original Wireframe
 

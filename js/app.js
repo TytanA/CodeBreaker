@@ -1,8 +1,8 @@
 //games constant variable
 const colorChoices = ['ring', 'sword', 'bow', 'orb', 'potion', 'ring', 'key', 'axe'];
-const backgroundMusic = new Audio('../audio/dungeon_theme_1.wav');
-const wonSound = new Audio('../audio/Fanfare_3.wav');
-const lostSound = new Audio('../audio/Game_Over_1.wav')
+// const backgroundMusic = new Audio('../audio/dungeon_theme_1.wav'); //for future updates 
+// const wonSound = new Audio('../audio/Fanfare_3.wav'); //for future updates 
+// const lostSound = new Audio('../audio/Game_Over_1.wav')  //for future updates 
 
 //state variables
 let numberOfGuesses //number of guess allowed
@@ -65,7 +65,7 @@ playAgainBtnEl.addEventListener('click', playAgain)
 init()
 
 //setting volume for the background music
-sound.volume =.3
+// sound.volume =.3 for future improvements
 
 
 //define functions
@@ -74,7 +74,6 @@ sound.volume =.3
 function addColor(e){
     if (guessBlock.length < 4){
     guessBlock.push(e.target.id);
-    // console.log(e.target.id)
     colorclick = true;
     render()
     }
