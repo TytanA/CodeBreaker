@@ -23,13 +23,17 @@ You have 10 tries to guess the secret code, it you do not then you lose.
 
 ![homepage on larger screens](https://i.imgur.com/TpCZ1dv.png)
 ![homepage on smaller screens](https://i.imgur.com/ArHBT02.png)
+![filled out guess board](https://i.imgur.com/12tF7jE.png)
+![win screen](https://i.imgur.com/Gc9eUNM.png)
+![loss screen](https://i.imgur.com/38rxEPV.png)
+
 
 # Planned Improvements
 
 * Add background music, win audio, and lost audio.
 * Animate the sprites 
 * Get assets for a pixel rpg hero to add to the web page in the website
-*  
+* Miltiple difficulity modes
 
 # Original Wireframe
 
