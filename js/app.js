@@ -1,8 +1,5 @@
 //games constant variable
 const colorChoices = ['ring', 'sword', 'bow', 'orb', 'potion', 'ring', 'key', 'axe'];
-// const backgroundMusic = new Audio('../audio/dungeon_theme_1.wav'); //for future updates 
-// const wonSound = new Audio('../audio/Fanfare_3.wav'); //for future updates 
-// const lostSound = new Audio('../audio/Game_Over_1.wav')  //for future updates 
 
 //state variables
 let numberOfGuesses //number of guess allowed
@@ -42,7 +39,7 @@ const submitBtnEl = document.getElementById('submit'); //submit button
 const deleteBtnEl = document.getElementById('delete'); //delete button
 const playAgainBtnEl = document.getElementById('playAgain'); //play again button on the popup
 
-const guessBoardOne = document.getElementById('gueOne'); //maybe i should make a object for these like the color button but the elements for the guess board
+const guessBoardOne = document.getElementById('gueOne'); 
 const guessBoardTwo = document.getElementById('gueTwo');
 const guessBoardThree = document.getElementById('gueThree');
 const guessBoardFour = document.getElementById('gueFour');
@@ -63,10 +60,6 @@ playAgainBtnEl.addEventListener('click', playAgain)
 
 
 init()
-
-//setting volume for the background music
-// sound.volume =.3 for future improvements
-
 
 //define functions
 
