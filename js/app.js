@@ -89,15 +89,8 @@ function submit() {
         compareCodes();
         hintArray();
         loopSecret = secretCode.slice(0)
-        console.log(guessBlock)
     }
     render()
-    if (lost === true) {
-        render()
-    } else if (won === true) {
-        render
-    }
-    
 }   
 
 //this function should remove the last color off of the guess board
